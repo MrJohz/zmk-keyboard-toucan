@@ -20,7 +20,7 @@
                 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T        &kp Y     &kp U     &kp I     &kp O     &kp P    &trans
                &caps_word &kp A     &kp S     &kp D     &kp F     &kp G        &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
                &kp MY_GLB &kp BSLH  &kp Z     &kp X     &kp C     &kp V        &kp B     &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH
-                              &mt LALT TAB   &mt LCTRL BSPC   &kp LSHIFT       &lt KEYPAD RET   &lt NAV SPACE   &mt LGUI ESC
+                              &mt LALT TAB   &mt LCTRL BSPC   &kp LSHIFT       &lt NUMPAD RET   &lt NAV SPACE   &mt LGUI ESC
             >;
         };
 
