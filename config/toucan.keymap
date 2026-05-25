@@ -20,38 +20,38 @@
         combo_lparen {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <3 4>;
-            layers = <QWERTY>
-            bindings = <&kp LEFT_PARENTHESIS>
+            layers = <QWERTY>;
+            bindings = <&kp LEFT_PARENTHESIS>;
         }
         combo_rparen {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <4 5>;
-            layers = <QWERTY>
-            bindings = <&kp RIGHT_PARENTHESIS>
+            layers = <QWERTY>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
         }
         combo_langle {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <15 16>;
-            layers = <QWERTY>
-            bindings = <&kp LESS_THAN>
+            layers = <QWERTY>;
+            bindings = <&kp LESS_THAN>;
         }
         combo_rangle {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <16 17>;
-            layers = <QWERTY>
-            bindings = <&kp GREATER_THAN>
+            layers = <QWERTY>;
+            bindings = <&kp GREATER_THAN>;
         }
         combo_lbracket {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <26 27>;
-            layers = <QWERTY>
-            bindings = <&kp LEFT_BRACKET>
+            layers = <QWERTY>;
+            bindings = <&kp LEFT_BRACKET>;
         }
         combo_rbracket {
             timeout_ms = <COMBO_TIMEOUT>;
             key-positions = <27 28>;
-            layers = <QWERTY>
-            bindings = <&kp RIGHT_BRACKET>
+            layers = <QWERTY>;
+            bindings = <&kp RIGHT_BRACKET>;
         }
     }
 
