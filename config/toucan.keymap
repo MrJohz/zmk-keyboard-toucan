@@ -4,9 +4,11 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define QWERTY 0
-#define NAV    1
-#define NUMPAD 2
+#define QWERTY  0
+#define NAV     1
+#define NUMPAD  2
+#define TAIPO   3
+#define CONTROL 4
 
 #define COMBO_TIMEOUT 50
 
@@ -17,41 +19,119 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_control_layer {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <39 40>;
+            bindings = <&mo CONTROL>;
+        };
+
         combo_lparen {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <3 4>;
+            key-positions = <2 14>;
             layers = <QWERTY>;
             bindings = <&kp LEFT_PARENTHESIS>;
         };
         combo_rparen {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <4 5>;
+            key-positions = <3 15>;
             layers = <QWERTY>;
             bindings = <&kp RIGHT_PARENTHESIS>;
         };
         combo_langle {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <15 16>;
+            key-positions = <4 16>;
             layers = <QWERTY>;
             bindings = <&kp LESS_THAN>;
         };
         combo_rangle {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <16 17>;
+            key-positions = <5 17>;
             layers = <QWERTY>;
             bindings = <&kp GREATER_THAN>;
         };
         combo_lbracket {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <26 27>;
+            key-positions = <14 26>;
             layers = <QWERTY>;
             bindings = <&kp LEFT_BRACKET>;
         };
         combo_rbracket {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <27 28>;
+            key-positions = <15 27>;
             layers = <QWERTY>;
             bindings = <&kp RIGHT_BRACKET>;
+        };
+        combo_excl {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <1 13>;
+            layers = <QWERTY>;
+            bindings = <&kp EXCLAMATION>;
+        };
+        combo_ques {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <13 25>;
+            layers = <QWERTY>;
+            bindings = <&kp QUESTION>;
+        };
+        combo_grave {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <16 28>;
+            layers = <QWERTY>;
+            bindings = <&kp GRAVE>;
+        };
+        combo_hat {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <17 29>;
+            layers = <QWERTY>;
+            bindings = <&kp CARET>;
+        };
+        combo_hash {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <6 18>;
+            layers = <QWERTY>;
+            bindings = <&kp NUHS>;
+        };
+        combo_dollar {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <18 30>;
+            layers = <QWERTY>;
+            bindings = <&kp DOLLAR>;
+        };
+        combo_ampersand {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <7 19>;
+            layers = <QWERTY>;
+            bindings = <&kp AMPERSAND>;
+        };
+        combo_asterisk {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <19 31>;
+            layers = <QWERTY>;
+            bindings = <&kp ASTERISK>;
+        };
+        combo_quote {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <8 20>;
+            layers = <QWERTY>;
+            bindings = <&kp LS(N2)>;
+        };
+        combo_percent {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <20 32>;
+            layers = <QWERTY>;
+            bindings = <&kp PERCENT>;
+        };
+        combo_tilde {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <9 21>;
+            layers = <QWERTY>;
+            bindings = <&kp TILDE2>;
+        };
+        combo_at {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <21 33>;
+            layers = <QWERTY>;
+            bindings = <&kp LS(SINGLE_QUOTE)>;
         };
     };
 
@@ -59,7 +139,7 @@
         compatible = "zmk,keymap";
 
         qwerty {
-            display-name = "QWERTY";
+            display-name = "QWE";
             bindings = <
                 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T        &kp Y     &kp U     &kp I     &kp O     &kp P    &trans
                &caps_word &kp A     &kp S     &kp D     &kp F     &kp G        &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
@@ -79,13 +159,33 @@
         };
 
         sym {
-            display-name = "NUMPAD";
+            display-name = "NUM";
             bindings = <
-                &trans    &trans    &kp F7    &kp F8    &kp F9    &kp F12      &kp KP_EQUAL &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MULTIPLY &trans
-                &trans    &trans    &kp F4    &kp F5    &kp F6    &kp F11      &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_SLASH &trans
-                &trans    &trans    &kp F1    &kp F2    &kp F3    &kp F10      &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT   &kp KP_N0
+                &trans    &trans    &kp F7    &kp F8    &kp F9    &kp F12      &kp EQUAL &kp N7    &kp N8    &kp N9    &kp MULTIPLY &trans
+                &trans    &trans    &kp F4    &kp F5    &kp F6    &kp F11      &kp PLUS  &kp N4    &kp N5    &kp N6    &kp SLASH &trans
+                &trans    &trans    &kp F1    &kp F2    &kp F3    &kp F10      &kp MINUS &kp N1    &kp N2    &kp N3    &kp DOT   &kp N0
                                               &trans    &trans    &trans       &trans    &trans    &trans
             >;
         };
+
+        taipo {
+            display-name = "TAI";
+            bindings = <
+                &none      &none      &none      &none      &none      &none        &kp T      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &kp E      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
+                                                 &none      &none      &none        &none      &none      &none
+            >;
+        }
+
+        control {
+            display-name = "CON";
+            bindings = <
+                &none      &none      &none      &none      &none      &none        &to QWERTY &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &bt BT_NXT &bt BT_PRV &bt BT_CLR &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
+                                                 &none      &none      &none        &none      &none      &none 
+            >;
+        }
     };
 };
