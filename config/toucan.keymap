@@ -176,7 +176,7 @@
                 &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
                                                  &none      &none      &none        &none      &none      &none
             >;
-        }
+        };
 
         control {
             display-name = "CON";
@@ -186,6 +186,6 @@
                 &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
                                                  &none      &none      &none        &none      &none      &none 
             >;
-        }
+        };
     };
 };
