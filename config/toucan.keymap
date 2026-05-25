@@ -8,14 +8,57 @@
 #define NAV    1
 #define NUMPAD 2
 
+#define COMBO_TIMEOUT 50
+
 #define MY_GLB (LG(LC(SPACE)))
 
 / {
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_lparen {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <3 4>;
+            layers = <QWERTY>
+            bindings = <&kp LEFT_PARENTHESIS>
+        }
+        combo_rparen {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <4 5>;
+            layers = <QWERTY>
+            bindings = <&kp RIGHT_PARENTHESIS>
+        }
+        combo_langle {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <15 16>;
+            layers = <QWERTY>
+            bindings = <&kp LESS_THAN>
+        }
+        combo_rangle {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <16 17>;
+            layers = <QWERTY>
+            bindings = <&kp GREATER_THAN>
+        }
+        combo_lbracket {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <26 27>;
+            layers = <QWERTY>
+            bindings = <&kp LEFT_BRACKET>
+        }
+        combo_rbracket {
+            timeout_ms = <COMBO_TIMEOUT>;
+            key-positions = <27 28>;
+            layers = <QWERTY>
+            bindings = <&kp RIGHT_BRACKET>
+        }
+    }
+
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        qwerty {
             display-name = "QWERTY";
             bindings = <
                 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T        &kp Y     &kp U     &kp I     &kp O     &kp P    &trans
@@ -43,18 +86,6 @@
                 &trans    &trans    &kp F1    &kp F2    &kp F3    &kp F10      &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT   &kp KP_N0
                                               &trans    &trans    &trans       &trans    &trans    &trans
             >;
-        };
-
-        extra_1 {
-                status = "reserved";
-        };
-
-        extra_2 {
-                status = "reserved";
-        };
-
-        extra_3 {
-                status = "reserved";
         };
     };
 };
