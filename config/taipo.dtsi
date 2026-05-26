@@ -3,77 +3,77 @@ combo_l_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BINDINGS>; \
 	key-positions = <LEFT_KEYPOS>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_li_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LIT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LOT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_lb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LIT LOT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_r_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_ri_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS RIT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_ro_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS ROT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 }; \
 combo_rb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS RIT ROT>; \
-	layers = <COMBO_LAYERS>; \
+	layers = <TAIPO_COMBO_LAYER>; \
 };
 
 combo_l_space { 
 	timeout-ms = <COMBO_TIMEOUT>; 
 	bindings = <&kp SPACE>; 
 	key-positions = <LOT>; 
-	layers = <COMBO_LAYERS>; 
+	layers = <TAIPO_COMBO_LAYER>; 
 };
 
 combo_r_space { 
 	timeout-ms = <COMBO_TIMEOUT>; 
 	bindings = <&kp SPACE>; 
 	key-positions = <ROT>; 
-	layers = <COMBO_LAYERS>; 
+	layers = <TAIPO_COMBO_LAYER>; 
 };
 
 combo_l_bspc { 
 	timeout-ms = <COMBO_TIMEOUT>; 
 	bindings = <&kp BSPC>; 
 	key-positions = <LIT>; 
-	layers = <COMBO_LAYERS>; 
+	layers = <TAIPO_COMBO_LAYER>; 
 };
 
 combo_r_bspc { 
 	timeout-ms = <COMBO_TIMEOUT>; 
 	bindings = <&kp BSPC>; 
 	key-positions = <RIT>; 
-	layers = <COMBO_LAYERS>; 
+	layers = <TAIPO_COMBO_LAYER>; 
 };
 
 TCOMBO(R,      &kp R,      &kp LS(R), &kp GT,     &kp PSCRN,    TLP,         TRP)
