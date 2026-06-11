@@ -4,6 +4,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// Plover HID steno (zmk-hid-io-plover-hid module): &plv behavior + PLV_* key bit indices
+#include <behaviors/plover_hid.dtsi>
+#include <dt-bindings/zmk/hid-io/plover_hid.h>
+
 #define QWERTY  0
 #define NAV     1
 #define NUMPAD  2
@@ -219,10 +223,10 @@
         steno {
             display-name = "STN";
             bindings = <
-                &mo CONTROL &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &mo CONTROL
-                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
-                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
-                                                 &none      &none      &none        &none      &none      &none
+                &mo CONTROL  &plv PLV_NM   &plv PLV_NM2  &plv PLV_NM3  &plv PLV_NM4  &plv PLV_NM5     &plv PLV_NM6  &plv PLV_NM7  &plv PLV_NM8  &plv PLV_NM9  &plv PLV_NMA  &mo CONTROL
+                &plv PLV_X1  &plv PLV_SL   &plv PLV_TL   &plv PLV_PL   &plv PLV_HL   &plv PLV_ST      &plv PLV_ST3  &plv PLV_FR   &plv PLV_PR   &plv PLV_LR   &plv PLV_TR   &plv PLV_DR
+                &plv PLV_X2  &plv PLV_SL2  &plv PLV_KL   &plv PLV_WL   &plv PLV_RL   &plv PLV_ST2     &plv PLV_ST4  &plv PLV_RR   &plv PLV_BR   &plv PLV_GR   &plv PLV_SR   &plv PLV_ZR
+                                           &plv PLV_X3   &plv PLV_A    &plv PLV_O                     &plv PLV_E    &plv PLV_U    &plv PLV_X4
             >;
         };
 
