@@ -8,7 +8,8 @@
 #define NAV     1
 #define NUMPAD  2
 #define TAIPO   3
-#define CONTROL 4
+#define STENO   4
+#define CONTROL 5
 
 
 // CONFIG
@@ -56,6 +57,9 @@
         combo_control_layer {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <39 40>;
+            // Not active on STENO: positions 39+40 are the E+U steno chord there.
+            // CONTROL is reached from STENO via the top-corner &mo CONTROL keys instead.
+            layers = <QWERTY NAV NUMPAD TAIPO>;
             bindings = <&mo CONTROL>;
         };
 
@@ -212,10 +216,20 @@
             >;
         };
 
+        steno {
+            display-name = "STN";
+            bindings = <
+                &mo CONTROL &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &mo CONTROL
+                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
+                                                 &none      &none      &none        &none      &none      &none
+            >;
+        };
+
         control {
             display-name = "CON";
             bindings = <
-                &none      &none      &none      &none      &none      &none        &to QWERTY &to TAIPO  &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none        &to QWERTY &to TAIPO  &to STENO  &none      &none      &none
                 &none      &none      &none      &none      &none      &none        &bt BT_NXT &bt BT_PRV &bt BT_CLR &none      &none      &none
                 &none      &none      &none      &none      &none      &none        &none      &none      &none      &none      &none      &none
                                                  &none      &none      &none        &none      &none      &none 
